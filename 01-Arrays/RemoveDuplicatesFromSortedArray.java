@@ -7,6 +7,24 @@ class RemoveDuplicatesFromSortedArray
         System.out.println(removeDuplicates(nums));
     }
 
+    public static int removeDuplicates(int[] nums)
+    {
+        int j=1;
+        if(nums.length<=1)
+        {
+            return nums.length;
+        }
+        for(int i=1; i<nums.length; i++)
+        {
+           if(nums[i]!=nums[j-1])
+           {
+              nums[j]=nums[i];
+              j++;
+           }
+        }  
+        return j;  
+    }
+
                 //1.using ArrayList
     /*public static int removeDuplicates(int[] nums)
     {
@@ -27,7 +45,7 @@ class RemoveDuplicatesFromSortedArray
     }*/
 
             //2.Using 2 pointer(optimal)
-    public static int removeDuplicates(int[] nums)
+    /*public static int removeDuplicates(int[] nums)
     {
         if(nums.length == 0)
             return 0;
@@ -45,5 +63,5 @@ class RemoveDuplicatesFromSortedArray
             }
         }
         return k+1;
-    }
+    }*/
 }
